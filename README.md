@@ -39,7 +39,7 @@ You should move the JSX into the correct components:
 
 - **Header**. `header` is top level HTML element.
 - **Footer**. `footer` is top level HTML element.
-- **NewEventForm**. `form` is top level HTML element.
+- **NewEventForm**. `form` is bottom level HTML element.
 - **Event**. `li` with className `event` is the top level HTML element.
 - **Attendees**. `button` with text `Show/Hide Attendees` and `div` with className `attendees` are the top level HTML elements.
 - **Attendee**. `div` with className `attendee` is the top level HTML element.
