@@ -1,8 +1,9 @@
+import Attendees from "./Attendees";
 export default function Event({ events, toggleEventAttendees, showAttendees, updateEventAttendance }) {
 
   return <div className="events">
     <ul>
-      {events.map((event) => {
+      {events.map(event => {
         const { people: attendees } = event;
 
         return (
@@ -15,57 +16,12 @@ export default function Event({ events, toggleEventAttendees, showAttendees, upd
               <br />
               <span>Organized by: {event.organizer} </span>
               <br />
-              <>
-                <button onClick={toggleEventAttendees}>
-                  {!showAttendees ? "Show Attendees" : "Hide Attendees"}
-                </button>
-
-                {showAttendees ? (
-                  <div className="attendees">
-                    {attendees.map((attendee, index) => (
-                      <>
-                        <div key={attendee.id} className="attendee">
-                          <p>
-                            <img
-                              src={attendee.avatar}
-                              alt={attendee.firstName}
-                            />
-                            {"   "}
-                            <span>
-                              {" "}
-                              {attendee.firstName} {attendee.lastName}{" "}
-                            </span>
-                          </p>
-                          <p>
-                            <button
-                              className="clickable"
-                              onClick={() =>
-                                updateEventAttendance(
-                                  event.id,
-                                  attendee.id
-                                )
-                              }
-                            >
-                              Attending:
-                            </button>
-                            <span>
-                              {attendee.attendance ? "✅" : "❌"}
-                            </span>
-                          </p>
-
-                          <p>
-                            <span>Note:</span> {attendee.note}
-                          </p>
-                        </div>
-                      </>
-                    ))}
-                  </div>
-                ) : null}
-              </>
+              <Attendees attendees={attendees} toggleEventAttendees={toggleEventAttendees} showAttendees={showAttendees} updateEventAttendance={updateEventAttendance} />
             </li>
           </>
         );
       })}
     </ul>
   </div>
+  console.log(key)
 }

@@ -4,11 +4,7 @@ import { v1 as generateUniqueID } from "uuid";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import NewEventForm from "./Components/NewEventForm";
-// import Attendees from "./Attendees";
 import Event from "./Components/Event";
-// import Footer from "./Components/Footer";
-// import Header from "./Components/Header";
-// import NewEventForm from "./Components/NewEventForm";
 
 function App() {
   const [events, setEvents] = useState(eventsData);
@@ -99,7 +95,8 @@ function App() {
           <NewEventForm handleAddEvent={handleAddEvent} handleSubmit={handleSubmit} handleTextChange={handleTextChange} handleSelectChange={handleSelectChange}
             newEvent={newEvent} />
         </div>
-        <Event events={events} toggleEventAttendees={toggleEventAttendees} showAttendees={showAttendees} updateEventAttendance={updateEventAttendance} />
+        <Event events={events} toggleEventAttendees={toggleEventAttendees} showAttendees={showAttendees} updateEventAttendance={updateEventAttendance}
+        />
       </main>
       <Footer />
     </div>
